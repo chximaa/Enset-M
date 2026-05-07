@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tp3 ex7</title>
+</head>
+<body>
+    <script>
+        do {
+        var nombre = parseInt(prompt("Entrez un nombre entier positif :")); // si on utilise let nombre devient variable locale et definie seulement dans do{}
+        } while (nombre<0);
+
+        const estPremier = nombre => {
+            if (nombre < 2) return false;
+
+            for (let i = 2; i <= Math.sqrt(nombre); i++) {
+                if (nombre % i === 0) return false;
+            }
+
+            return true;
+        };
+
+        console.log(estPremier(nombre) ? "Nombre premier" : "Non premier");
+        console.log(estPremier(2) ? "Nombre premier" : "Non premier");
+        console.log(estPremier(3) ? "Nombre premier" : "Non premier");
+        console.log(estPremier(4) ? "Nombre premier" : "Non premier");
+        console.log(estPremier(5) ? "Nombre premier" : "Non premier");
+        console.log(estPremier(6) ? "Nombre premier" : "Non premier");
+        console.log(estPremier(7) ? "Nombre premier" : "Non premier");
+        console.log(estPremier(8) ? "Nombre premier" : "Non premier");
+        console.log(estPremier(9) ? "Nombre premier" : "Non premier");
+
+
+    </script>
+</body>
+</html>

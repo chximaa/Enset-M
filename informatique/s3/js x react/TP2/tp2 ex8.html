@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tp2 ex8</title>
+</head>
+<body>
+    <script>
+        //let tab = [20,5.13,18,17,14,,9,2,10];
+        let tab=[];
+        let n = parseInt(prompt("Donner le nombre des notes : "));
+        for (let i=0; i<n; i++){
+            tab.push(parseFloat(prompt(`Donner la note ${i+1} : `)));
+        }
+        // do{
+        //     let note = parseFloat(prompt("Donner une note : "));
+        //     if (note >= 0){
+        //         tab.push(note);
+        //     }while(note >= 0);
+        // }
+        let somme = 0;
+        let moyenne = 0;
+        let nbr = 0;
+        for (let note of tab){
+            somme += note;
+            if (note >= 10){
+                nbr++;
+            }
+        }
+        moyenne = somme/tab.length;
+        console.log(`La moyenne des notes du tableau est : ${moyenne}`);
+        console.log(`Le nombre des notes superieurs ou egaux a 10 est : ${nbr}`);
+    </script>
+</body>
+</html>

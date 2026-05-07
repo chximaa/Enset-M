@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tp3 ex4</title>
+</head>
+<body>
+    <script>
+        const calculTTC = prixHT => prixHT * 1.2;
+
+        let prixHT = parseFloat(prompt("Entrez le prix HT :"));
+        let prixTTC = calculTTC(prixHT);
+            
+        console.log(prixTTC > 1000 ? "Cher" : `Prix TTC : ${prixTTC.toFixed(2)} DH`);
+    </script>
+</body>
+</html>

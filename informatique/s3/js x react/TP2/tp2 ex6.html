@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tp2 ex6</title>
+</head>
+<body>
+    <script>
+        let tab = [23,5,8,2,9,2,25,8,9,12,9,32,12];
+        //let doublon = [];
+        let doublonTrouve = false;
+        for (let i=0; i<tab.length; i++){
+            for (let j=i+1; j<tab.length; j++){
+                if (tab[i] == tab[j]){
+                    doublonTrouve = true;
+                    //doublon.push(tab[i]);
+                    break;
+                }
+            }
+            if (doublonTrouve){
+                break;
+            }
+        }
+        if (doublonTrouve){
+                console.log(`Des doublants ont ete trouves dans le tableau`);
+            }
+        else{
+            console.log(`Aucun doublant n'a ete trouve dans le tableau`);
+        }
+        
+    </script>
+</body>
+</html>

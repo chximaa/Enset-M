@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENSET Mohammedia – Plateforme de Révision CI Data Engineering</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===== SIDEBAR ===== -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <span class="logo-gem">✦</span>
+                <div>
+                    <div class="logo-title">ENSET</div>
+                    <div class="logo-sub">Mohammedia · CI Data</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-nav">
+            <a class="nav-item active" data-page="home" href="#">
+                <span class="nav-icon">⌂</span> Tableau de Bord
+            </a>
+
+            <div class="nav-group" id="group-math">
+                <div class="nav-group-header" onclick="toggleGroup('math')">
+                    <span>📘 Mathématiques</span>
+                    <span class="nav-arrow" id="arrow-math">›</span>
+                </div>
+                <div class="nav-group-body" id="body-math">
+                    <a class="nav-sub" data-page="topic" data-id="fonctions" data-cat="math" href="#">Fonctions & Limites</a>
+                    <a class="nav-sub" data-page="topic" data-id="dl" data-cat="math" href="#">Développements Limités</a>
+                    <a class="nav-sub" data-page="topic" data-id="algebre" data-cat="math" href="#">Algèbre Linéaire</a>
+                    <a class="nav-sub" data-page="topic" data-id="integration" data-cat="math" href="#">Intégration</a>
+                    <a class="nav-sub" data-page="topic" data-id="multiint" data-cat="math" href="#">Intégrales Multiples</a>
+                    <a class="nav-sub" data-page="topic" data-id="edo" data-cat="math" href="#">Équations Différentielles</a>
+                    <a class="nav-sub" data-page="topic" data-id="series" data-cat="math" href="#">Suites & Séries</a>
+                    <a class="nav-sub" data-page="topic" data-id="foncplusieurs" data-cat="math" href="#">Fonctions de Plusieurs Variables</a>
+                </div>
+            </div>
+
+            <div class="nav-group" id="group-info">
+                <div class="nav-group-header" onclick="toggleGroup('info')">
+                    <span>💻 Informatique</span>
+                    <span class="nav-arrow" id="arrow-info">›</span>
+                </div>
+                <div class="nav-group-body" id="body-info">
+                    <a class="nav-sub" data-page="topic" data-id="cprog" data-cat="info" href="#">Programmation C</a>
+                    <a class="nav-sub" data-page="topic" data-id="structures" data-cat="info" href="#">Structures de Données</a>
+                    <a class="nav-sub" data-page="topic" data-id="algorithmes" data-cat="info" href="#">Algorithmes & Complexité</a>
+                    <a class="nav-sub" data-page="topic" data-id="sql" data-cat="info" href="#">Bases de Données SQL</a>
+                    <a class="nav-sub" data-page="topic" data-id="archi" data-cat="info" href="#">Architecture Machine</a>
+                    <a class="nav-sub" data-page="topic" data-id="os" data-cat="info" href="#">Systèmes d'Exploitation</a>
+                    <a class="nav-sub" data-page="topic" data-id="reseaux" data-cat="info" href="#">Réseaux & Protocoles</a>
+                    <a class="nav-sub" data-page="topic" data-id="uml" data-cat="info" href="#">Modélisation UML</a>
+                    <a class="nav-sub" data-page="topic" data-id="javapython" data-cat="info" href="#">Java OOP & Python</a>
+                    <a class="nav-sub" data-page="topic" data-id="binaire" data-cat="info" href="#">Binaire & Logique</a>
+                </div>
+            </div>
+
+            <a class="nav-item" data-page="exam" href="#">
+                <span class="nav-icon">🧪</span> Examen Blanc
+            </a>
+        </div>
+
+        <div class="sidebar-footer">
+            <div class="progress-label">Progression Globale</div>
+            <div class="progress-track"><div class="progress-fill" id="global-bar"></div></div>
+            <div class="progress-pct" id="global-pct">0 %</div>
+        </div>
+    </nav>
+
+    <!-- Mobile toggle -->
+    <button id="mob-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+
+    <!-- ===== MAIN ===== -->
+    <main id="main">
+
+        <!-- HOME -->
+        <section id="page-home" class="page active">
+            <div class="page-hero">
+                <div class="hero-content">
+                    <div class="hero-badge">Concours 2025</div>
+                    <h1>Plateforme de Révision<br><em>ENSET Mohammedia</em></h1>
+                    <p class="hero-sub">Cycle Ingénieur · Data Engineering · Préparation Complète</p>
+                </div>
+                <div class="hero-deco">✦</div>
+            </div>
+
+            <div class="stats-row">
+                <div class="stat-card"><div class="stat-n">18</div><div class="stat-l">Chapitres</div></div>
+                <div class="stat-card"><div class="stat-n">144+</div><div class="stat-l">Exercices</div></div>
+                <div class="stat-card"><div class="stat-n">180+</div><div class="stat-l">Questions QCM</div></div>
+                <div class="stat-card"><div class="stat-n" id="stat-done">0</div><div class="stat-l">Quiz Réalisés</div></div>
+            </div>
+
+            <div class="home-grid">
+                <div class="home-big-card math-hcard" onclick="showPage('math')">
+                    <div class="hcard-icon">📘</div>
+                    <div class="hcard-body">
+                        <h2>Mathématiques</h2>
+                        <p>8 chapitres · Fonctions, Algèbre, Intégration, Séries, EDO, Fourier…</p>
+                        <div class="tag-row">
+                            <span class="tag">Limites & Continuité</span>
+                            <span class="tag">Algèbre Linéaire</span>
+                            <span class="tag">Intégration</span>
+                            <span class="tag">Séries de Fourier</span>
+                        </div>
+                    </div>
+                    <div class="hcard-arrow">→</div>
+                </div>
+                <div class="home-big-card info-hcard" onclick="showPage('info')">
+                    <div class="hcard-icon">💻</div>
+                    <div class="hcard-body">
+                        <h2>Informatique</h2>
+                        <p>10 chapitres · C, Algorithmes, SQL, OS, Réseaux, UML, Java, Python…</p>
+                        <div class="tag-row">
+                            <span class="tag">Programmation C</span>
+                            <span class="tag">Structures de Données</span>
+                            <span class="tag">SQL & BDD</span>
+                            <span class="tag">Réseaux</span>
+                        </div>
+                    </div>
+                    <div class="hcard-arrow">→</div>
+                </div>
+                <div class="home-big-card exam-hcard" onclick="showPage('exam')">
+                    <div class="hcard-icon">🧪</div>
+                    <div class="hcard-body">
+                        <h2>Examen Blanc</h2>
+                        <p>Simulation complète · Questions aléatoires · Chronomètre · Correction</p>
+                        <div class="tag-row">
+                            <span class="tag">Mode Examen</span>
+                            <span class="tag">Chronomètre</span>
+                            <span class="tag">Correction Détaillée</span>
+                        </div>
+                    </div>
+                    <div class="hcard-arrow">→</div>
+                </div>
+            </div>
+
+            <div class="scores-panel">
+                <h3>📊 Mes Derniers Résultats</h3>
+                <div id="scores-list"><p class="muted">Aucun quiz effectué. Commencez à réviser !</p></div>
+            </div>
+        </section>
+
+        <!-- MATH LIST -->
+        <section id="page-math" class="page">
+            <div class="page-header">
+                <div class="breadcrumb"><a href="#" onclick="showPage('home')">Accueil</a> › Mathématiques</div>
+                <h1>📘 Mathématiques</h1>
+                <p>Sélectionnez un chapitre pour accéder au cours, aux exercices et au quiz</p>
+            </div>
+            <div class="topics-grid" id="math-grid"></div>
+        </section>
+
+        <!-- INFO LIST -->
+        <section id="page-info" class="page">
+            <div class="page-header">
+                <div class="breadcrumb"><a href="#" onclick="showPage('home')">Accueil</a> › Informatique</div>
+                <h1>💻 Informatique</h1>
+                <p>Sélectionnez un chapitre pour accéder au cours, aux exercices et au quiz</p>
+            </div>
+            <div class="topics-grid" id="info-grid"></div>
+        </section>
+
+        <!-- TOPIC DETAIL -->
+        <section id="page-topic" class="page">
+            <div class="page-header">
+                <div class="breadcrumb" id="topic-bc"></div>
+                <h1 id="topic-title"></h1>
+                <p id="topic-sub"></p>
+            </div>
+
+            <div class="tab-bar">
+                <button class="tab-btn active" data-tab="course" onclick="switchTab('course')">📖 Cours</button>
+                <button class="tab-btn" data-tab="exercises" onclick="switchTab('exercises')">✏️ Exercices</button>
+                <button class="tab-btn" data-tab="quiz" onclick="switchTab('quiz')">🎯 Quiz QCM</button>
+            </div>
+
+            <div id="tab-course" class="tab-pane active">
+                <div class="course-body" id="course-body"></div>
+            </div>
+            <div id="tab-exercises" class="tab-pane">
+                <div id="exercises-body"></div>
+            </div>
+            <div id="tab-quiz" class="tab-pane">
+                <div id="quiz-body"></div>
+            </div>
+        </section>
+
+        <!-- EXAM -->
+        <section id="page-exam" class="page">
+            <div class="page-header">
+                <div class="breadcrumb"><a href="#" onclick="showPage('home')">Accueil</a> › Examen Blanc</div>
+                <h1>🧪 Examen Blanc – Simulation Concours</h1>
+                <p>Questions aléatoires issues de tous les chapitres · Mode chronométré</p>
+            </div>
+            <div id="exam-body"></div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

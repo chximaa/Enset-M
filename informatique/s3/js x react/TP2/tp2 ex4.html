@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tp2 ex4</title>
+</head>
+<body>
+    <script>
+        let tab = [];
+        // let n= parseInt(prompt("Entrez la taille du tableau : "));
+        // for (let i=0; i<n; i++){
+        //     tab.push(parseInt(prompt(`Entrez un nombre du tableau n : ${i+1}`)));
+        // }
+        let nbr = parseInt(prompt("Entrez un nombre a chercher: "));
+        let trouve = false;
+        for (let i of tab){
+            if (i == nbr){
+                trouve = true;
+                break;
+            }
+        }
+        if (trouve){
+            console.log(`Le nombre ${nbr} est dans le tableau`);
+        }
+        else{
+            console.log(`Le nombre ${nbr} n'est pas dans le tableau`);
+        }
+    </script>
+</body>
+</html>

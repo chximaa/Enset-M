@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcul du prix TTC</title>
+</head>
+<body>
+    <h1>Calcul du prix TTC</h1>
+
+    <button onclick="calculateTTC()">Calculer le prix TTC</button>
+    <br><br>
+    <div id="result"></div>
+
+    <script>
+        function calculateTTC() {
+        
+            let priceHT = parseFloat(prompt("donner le prixHT"));
+
+            const tvaRate = 19.6 / 100;
+            const priceTTC = priceHT * (1 + tvaRate);
+            let resultElement = document.getElementById("result");
+            resultElement.textContent = `Prix TTC : ${priceTTC.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+if (isNaN(priceHT) || priceHT < 0) {
+    alert("Veuillez saisir un prix HT valide.");
+    return;
+} -->

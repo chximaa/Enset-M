@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tp3 ex6</title>
+</head>
+<body>
+    <script>
+        const calculIMC = (poids, taille) => poids / (taille * taille);
+        const messageIMC = (poids, taille) => calculIMC(poids, taille) >= 25 ? "Surpoids" : calculIMC(poids, taille) < 18.5 ? "Sous-poids" : "IMC normal";
+
+        let poids = parseFloat(prompt("Entrez votre poids (kg) :"));
+        let taille = parseFloat(prompt("Entrez votre taille (m) :"));
+
+        console.log(messageIMC(poids, taille));
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex3</title>
+</head>
+<body>
+    <script>
+        let montant= parseFloat(prompt("Donner le montant du commande"));
+
+        if (montant<50){
+            commande= montant+10;
+        }
+        else if(montant>50 && montant<100){
+            commande= montant+5;
+        }
+        else if(montant>=100){
+            commande= montant;
+        }
+        else{
+            prompt("veuiller entrer un montant positif");
+        }
+
+        let client= prompt("Le client est-il nouveau ? (oui/non) :");
+        if (client=='oui' || client=='Oui'){
+            commande= commande*0.9;
+            console.log(`le totale a payer est ${commande.toFixed(2)}`)
+        }
+        else{
+            console.log(`le totale a payer est ${commande.toFixed(2)}`)
+        }
+    </script>
+</body>
+</html>

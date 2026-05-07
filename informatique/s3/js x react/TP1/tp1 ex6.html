@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let montant = parseFloat(prompt("Donner le montant du pret"));
+        let dure = parseInt(prompt("Dooner la duree en annees"))
+        if (dure<5){
+            let totale= montant + montant*0.03;
+        }
+        else if(dure>=10 && dure<=10){
+            let totale= montant + montant*0.04;
+        }
+        else if(dure>10){
+            let totale= montant + montant*0.05;
+        }
+    </script>
+</body>
+</html>

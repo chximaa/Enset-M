@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tp3 ex5</title>
+</head>
+<body>
+    <script>
+        const sommeSigne = (a, b, c) => (a + b + c) > 0 ? "Positive" : (a + b + c) < 0 ? "Négative" : "Nulle";
+
+        ///methode 1
+        let tab=[]
+        for (let i=0; i<3; i++){
+            tab[i]= parseInt(prompt("Donner un nmbr"));
+        }
+        console.log(sommeSigne(...tab));
+
+        ///mathode 2
+        // let nombres = prompt("Entrez trois nombres séparés par un espace :").split(" ").map(Number);
+        //console.log(sommeSigne(...nombres));
+        
+        ///methode 3
+        nombres= [
+            parseFloat(prompt("donner 1er nombre")),
+            parseFloat(prompt("donner 2eme nombre")),
+            parseFloat(prompt("donner 3eme nombre"))
+        ]
+
+    </script>
+</body>
+</html>

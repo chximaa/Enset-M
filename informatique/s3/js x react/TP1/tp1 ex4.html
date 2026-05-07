@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex4</title>
+</head>
+<body>
+    <script>
+        let x= parseFloat(prompt("Dooner la premiere note : "));
+        let y= parseFloat(prompt("Dooner la deuxieme note : "));
+        let z= parseFloat(prompt("Dooner la troisieme note : "));
+        let moyenne= (x+y+z)/3;
+        if (moyenne>=16){
+            mention = 'Tres Bien';
+        }
+        else if (moyenne>=14 && moyenne<16){
+            mention = 'Bien';
+        }
+        else if (moyenne>=12 && moyenne<14){
+            mention = 'Assez Bien';
+        }
+        else if (moyenne>=10 && moyenne<12){
+            mention = 'Passable';
+        }
+        else{
+            mention = 'Insuffisant';
+        }
+        console.log(`La mention de l'etudiant : ${mention}`);
+        if (moyenne<10){
+            console.log("L'etudiant doit passer un rattrapage");
+        }
+
+
+    </script>
+</body>
+</html>

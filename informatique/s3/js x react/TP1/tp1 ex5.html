@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let taille = parseInt(prompt("Donner la taille en metres"));
+        let poids = parseInt(prompt("Donner le poids en kilogrammes"));
+        let imc = poids / (taille * taille);
+        if (imc<18.5){console.log(`Maigreur avec IMC = ${imc.toFixed(4)}`);}
+        else if (imc>=18.5 && imc<=24.9){console.log(`Normal avec IMC = ${imc.toFixed(4)}`);}
+        else if (imc>=25 && imc<=29.9){console.log(`Surpoids avec IMC = ${imc.toFixed(4)}`);}
+        else if (imc>=30){console.log(`Obesite avec IMC = ${imc.toFixed(4)}`);}
+    </script>
+</body>
+</html>

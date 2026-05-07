@@ -1,0 +1,91 @@
+<!-- <!DOCTYPE html>
+    <script>
+
+    // exercice 1
+        let Prix_HT;
+        let TTC;
+        const TVA = 0.196;
+        Prix_HT = parseFloat(prompt("Entrez le prix HT :"));
+        if (!isNaN(Prix_HT)) {
+            TTC = Prix_HT + Prix_HT * TVA;
+            alert("Le prix TTC est : " + TTC.toFixed(2));
+        } else {
+            alert("Veuillez entrer un nombre valide !");
+        }
+
+
+    // exercice 2
+        let celsius = parseFloat(prompt("Entrez la température en Celsius :"));
+        if (!isNaN(celsius)) {
+            let fahrenheit = (celsius * 1.8) + 32;
+            let etat;
+            if (celsius < 0) {
+                etat = "L'eau est gelée.";
+            } else if (celsius > 100) {
+                etat = "L'eau est en ébullition.";
+            } else {
+                etat = "L'eau est à l'état liquide.";
+            }
+            alert(`Température en Fahrenheit : ${fahrenheit.toFixed(2)}°F\n${etat}`);
+        } else {
+            alert("Veuillez entrer une température valide !");
+        }
+
+
+        // exercice 3
+      let montantCommande = parseFloat(prompt("Entrez le montant de la commande (en DH) :"));
+        if (!isNaN(montantCommande) && montantCommande >= 0) {
+            let fraisLivraison = 0;
+            if (montantCommande < 50) {
+                fraisLivraison = 10;
+            } else if (montantCommande >= 50 && montantCommande <= 100) {
+                fraisLivraison = 5;
+            } else {
+                fraisLivraison = 0;
+            }
+
+            let clientNouveau = prompt("Êtes-vous un nouveau client ? (oui/non)").toLowerCase();
+            if (clientNouveau === "oui") {
+                fraisLivraison *= 0.9;
+            }
+            let totalAPayer = montantCommande + fraisLivraison;
+            alert(`Montant de la commande : ${montantCommande.toFixed(2)} DH\nFrais de livraison : ${fraisLivraison.toFixed(2)} DH\nTotal à payer : ${totalAPayer.toFixed(2)} DH`);
+        } else {
+            alert("Veuillez entrer un montant valide !");
+        }
+
+
+
+        // exercice 4
+        let note1 = parseFloat(prompt("Entrez la première note :"));
+        let note2 = parseFloat(prompt("Entrez la deuxième note :"));
+        let note3 = parseFloat(prompt("Entrez la troisième note :"));
+
+        if (!isNaN(note1) && !isNaN(note2) && !isNaN(note3) &&
+            note1 >= 0 && note1 <= 20 &&
+            note2 >= 0 && note2 <= 20 &&
+            note3 >= 0 && note3 <= 20) {
+
+            let moyenne = (note1 + note2 + note3) / 3;
+            let mention = "";
+
+            if (moyenne >= 16) {
+                mention = "Très Bien";
+            } else if (moyenne >= 14) {
+                mention = "Bien";
+            } else if (moyenne >= 12) {
+                mention = "Assez Bien";
+            } else if (moyenne >= 10) {
+                mention = "Passable";
+            } else {
+                mention = "Insuffisant";
+            }
+
+            let rattrapage = (moyenne < 10) ? "l'étudiant doit passer un rattrapage." : "l'étudiant est admis.";
+
+            alert(`Moyenne : ${moyenne.toFixed(2)}\nMention : ${mention}\nResultat : ${rattrapage}`);
+        } else {
+            alert("Veuillez entrer des notes valides (entre 0 et 20) !");
+        }
+
+    </script> -->
