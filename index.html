@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ENSET Mohammedia — Académie CI Data Engineering</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== SIDEBAR ===== -->
+<nav id="sidebar">
+  <div class="sidebar-brand">
+    <div class="brand-icon">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <polygon points="14,2 26,8 26,20 14,26 2,20 2,8" fill="var(--gold)" opacity="0.15"/>
+        <polygon points="14,5 23,10 23,18 14,23 5,18 5,10" fill="none" stroke="var(--gold)" stroke-width="1.5"/>
+        <text x="14" y="18" text-anchor="middle" font-size="11" font-family="Spectral" fill="var(--gold)" font-weight="700">E</text>
+      </svg>
+    </div>
+    <div class="brand-text">
+      <div class="brand-name">ENSET-M</div>
+      <div class="brand-sub">Cycle Ingénieur · Data Engineering</div>
+    </div>
+  </div>
+
+  <div class="sidebar-search">
+    <input type="text" id="sidebar-search-input" placeholder="Rechercher un sujet…" oninput="globalSearch(this.value)">
+    <span class="search-icon">⌕</span>
+  </div>
+
+  <div class="sidebar-nav" id="sidebar-nav">
+    <a class="nav-item active" data-page="home" href="#" onclick="navClick(event,'home')">
+      <span class="nav-icon">⌂</span>
+      <span>Tableau de Bord</span>
+    </a>
+
+    <div class="nav-section-label">Mathématiques</div>
+
+    <div class="nav-group" id="group-math">
+      <div class="nav-group-header" onclick="toggleGroup('math')">
+        <div class="nav-group-icon">📘</div>
+        <span>Mathématiques</span>
+        <span class="nav-arrow" id="arrow-math">›</span>
+      </div>
+      <div class="nav-group-body" id="body-math">
+        <a class="nav-sub" data-page="topic" data-id="fonctions" data-cat="math" href="#" onclick="navTopicClick(event,'fonctions','math')">Fonctions & Limites</a>
+        <a class="nav-sub" data-page="topic" data-id="dl" data-cat="math" href="#" onclick="navTopicClick(event,'dl','math')">Développements Limités</a>
+        <a class="nav-sub" data-page="topic" data-id="algebre" data-cat="math" href="#" onclick="navTopicClick(event,'algebre','math')">Algèbre Linéaire</a>
+        <a class="nav-sub" data-page="topic" data-id="integration" data-cat="math" href="#" onclick="navTopicClick(event,'integration','math')">Intégration</a>
+        <a class="nav-sub" data-page="topic" data-id="multiint" data-cat="math" href="#" onclick="navTopicClick(event,'multiint','math')">Intégrales Multiples</a>
+        <a class="nav-sub" data-page="topic" data-id="edo" data-cat="math" href="#" onclick="navTopicClick(event,'edo','math')">Équations Différentielles</a>
+        <a class="nav-sub" data-page="topic" data-id="series" data-cat="math" href="#" onclick="navTopicClick(event,'series','math')">Suites & Séries</a>
+        <a class="nav-sub" data-page="topic" data-id="foncplusieurs" data-cat="math" href="#" onclick="navTopicClick(event,'foncplusieurs','math')">Fonctions de Plusieurs Variables</a>
+        <a class="nav-sub" data-page="topic" data-id="proba" data-cat="math" href="#" onclick="navTopicClick(event,'proba','math')">Probabilités & Statistiques</a>
+        <a class="nav-sub" data-page="topic" data-id="algebre_rel" data-cat="math" href="#" onclick="navTopicClick(event,'algebre_rel','math')">Algèbre Relationnelle</a>
+      </div>
+    </div>
+
+    <div class="nav-section-label">Informatique</div>
+
+    <div class="nav-group" id="group-info">
+      <div class="nav-group-header" onclick="toggleGroup('info')">
+        <div class="nav-group-icon">💻</div>
+        <span>Informatique</span>
+        <span class="nav-arrow" id="arrow-info">›</span>
+      </div>
+      <div class="nav-group-body" id="body-info">
+        <a class="nav-sub" data-page="topic" data-id="cprog" data-cat="info" href="#" onclick="navTopicClick(event,'cprog','info')">Programmation C</a>
+        <a class="nav-sub" data-page="topic" data-id="cpp" data-cat="info" href="#" onclick="navTopicClick(event,'cpp','info')">C++ & POO</a>
+        <a class="nav-sub" data-page="topic" data-id="structures" data-cat="info" href="#" onclick="navTopicClick(event,'structures','info')">Structures de Données</a>
+        <a class="nav-sub" data-page="topic" data-id="algorithmes" data-cat="info" href="#" onclick="navTopicClick(event,'algorithmes','info')">Algorithmes & Complexité</a>
+        <a class="nav-sub" data-page="topic" data-id="sql" data-cat="info" href="#" onclick="navTopicClick(event,'sql','info')">Bases de Données SQL</a>
+        <a class="nav-sub" data-page="topic" data-id="archi" data-cat="info" href="#" onclick="navTopicClick(event,'archi','info')">Architecture Machine</a>
+        <a class="nav-sub" data-page="topic" data-id="os" data-cat="info" href="#" onclick="navTopicClick(event,'os','info')">Systèmes d'Exploitation</a>
+        <a class="nav-sub" data-page="topic" data-id="reseaux" data-cat="info" href="#" onclick="navTopicClick(event,'reseaux','info')">Réseaux & Protocoles</a>
+        <a class="nav-sub" data-page="topic" data-id="uml" data-cat="info" href="#" onclick="navTopicClick(event,'uml','info')">Modélisation UML</a>
+        <a class="nav-sub" data-page="topic" data-id="java" data-cat="info" href="#" onclick="navTopicClick(event,'java','info')">Java OOP</a>
+        <a class="nav-sub" data-page="topic" data-id="web" data-cat="info" href="#" onclick="navTopicClick(event,'web','info')">Web & JavaScript</a>
+        <a class="nav-sub" data-page="topic" data-id="binaire" data-cat="info" href="#" onclick="navTopicClick(event,'binaire','info')">Binaire & Logique</a>
+      </div>
+    </div>
+
+    <div class="nav-section-label">Concours</div>
+
+    <a class="nav-item" data-page="exams" href="#" onclick="navClick(event,'exams')">
+      <span class="nav-icon">📄</span>
+      <span>Annales ENSET</span>
+      <span class="nav-badge">2014–2022</span>
+    </a>
+
+    <a class="nav-item" data-page="exam" href="#" onclick="navClick(event,'exam')">
+      <span class="nav-icon">🎯</span>
+      <span>Examen Blanc</span>
+    </a>
+
+    <a class="nav-item" data-page="bookmarks" href="#" onclick="navClick(event,'bookmarks')">
+      <span class="nav-icon">★</span>
+      <span>Favoris</span>
+    </a>
+  </div>
+
+  <div class="sidebar-footer">
+    <div class="progress-section">
+      <div class="progress-header">
+        <span>Progression</span>
+        <span id="global-pct">0%</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="global-bar"></div></div>
+    </div>
+    <div class="sidebar-controls">
+      <button class="ctrl-btn" onclick="toggleTheme()" title="Thème">☀</button>
+      <button class="ctrl-btn" onclick="resetProgress()" title="Réinitialiser">↺</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile toggle -->
+<button id="mob-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">
+  <span></span><span></span><span></span>
+</button>
+
+<!-- ===== MAIN CONTENT ===== -->
+<main id="main">
+
+  <!-- SEARCH OVERLAY -->
+  <div id="search-overlay" class="hidden">
+    <div class="search-panel">
+      <input type="text" id="search-overlay-input" placeholder="Rechercher dans tous les cours…" oninput="performSearch(this.value)" autofocus>
+      <button onclick="closeSearch()" class="search-close">✕</button>
+      <div id="search-results"></div>
+    </div>
+  </div>
+
+  <!-- ===== PAGE: HOME ===== -->
+  <div id="page-home" class="page active">
+    <div class="page-header hero-header">
+      <div class="hero-eyebrow">Bienvenue sur votre académie</div>
+      <h1 class="hero-title">Concours ENSET Mohammedia<br><em>Cycle Ingénieur — Data Engineering</em></h1>
+      <p class="hero-desc">Cours complets · Exercices corrigés · QCM interactifs · Annales 2014–2022 · Examens blancs chronométrés</p>
+      <div class="hero-stats" id="hero-stats"></div>
+    </div>
+
+    <div class="section-title">Mathématiques</div>
+    <div class="topic-grid" id="math-grid"></div>
+
+    <div class="section-title">Informatique</div>
+    <div class="topic-grid" id="info-grid"></div>
+
+    <div class="section-title">Ressources & Concours</div>
+    <div class="resources-row">
+      <div class="resource-card" onclick="navClick(null,'exams')">
+        <div class="resource-icon">📄</div>
+        <div class="resource-title">Annales ENSET</div>
+        <div class="resource-desc">Examens officiels 2014–2022 · Informatique & Mathématiques</div>
+        <div class="resource-tag">9 examens</div>
+      </div>
+      <div class="resource-card" onclick="navClick(null,'exam')">
+        <div class="resource-icon">⏱</div>
+        <div class="resource-title">Examen Blanc</div>
+        <div class="resource-desc">Simulation complète · Timer · Score instantané</div>
+        <div class="resource-tag">Chronométré</div>
+      </div>
+      <div class="resource-card" onclick="navClick(null,'bookmarks')">
+        <div class="resource-icon">★</div>
+        <div class="resource-title">Mes Favoris</div>
+        <div class="resource-desc">Retrouvez vos chapitres sauvegardés</div>
+        <div class="resource-tag" id="bm-count-home">0 sauvegardés</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PAGE: TOPIC ===== -->
+  <div id="page-topic" class="page">
+    <div class="topic-header" id="topic-header"></div>
+    <div class="topic-tabs">
+      <button class="tab-btn active" onclick="switchTab('course')">📖 Cours</button>
+      <button class="tab-btn" onclick="switchTab('exercises')">✏️ Exercices</button>
+      <button class="tab-btn" onclick="switchTab('quiz')">🎯 Quiz QCM</button>
+    </div>
+    <div id="tab-course" class="tab-pane active">
+      <div class="course-content" id="course-content"></div>
+    </div>
+    <div id="tab-exercises" class="tab-pane">
+      <div id="exercises-body"></div>
+    </div>
+    <div id="tab-quiz" class="tab-pane">
+      <div id="quiz-body"></div>
+    </div>
+  </div>
+
+  <!-- ===== PAGE: ANNALES ===== -->
+  <div id="page-exams" class="page">
+    <div class="page-header">
+      <div class="page-eyebrow">Concours ENSET Mohammedia</div>
+      <h1 class="page-title">Annales Officielles</h1>
+      <p class="page-desc">Examens de la Première Année du Cycle d'Ingénieur · 2014 à 2022</p>
+    </div>
+    <div class="exams-filters">
+      <button class="exam-filter-btn active" onclick="filterExams('all',this)">Tous</button>
+      <button class="exam-filter-btn" onclick="filterExams('info',this)">Informatique</button>
+      <button class="exam-filter-btn" onclick="filterExams('math',this)">Mathématiques</button>
+    </div>
+    <div class="annales-grid" id="annales-grid"></div>
+
+    <div class="section-title" style="margin-top:3rem">Examen Détaillé — Questions & Corrections</div>
+    <div id="annale-detail"></div>
+  </div>
+
+  <!-- ===== PAGE: EXAM BLANC ===== -->
+  <div id="page-exam" class="page">
+    <div id="exam-body"></div>
+  </div>
+
+  <!-- ===== PAGE: BOOKMARKS ===== -->
+  <div id="page-bookmarks" class="page">
+    <div class="page-header">
+      <div class="page-eyebrow">Ma bibliothèque personnelle</div>
+      <h1 class="page-title">Favoris</h1>
+    </div>
+    <div id="bookmarks-body"></div>
+  </div>
+
+</main>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
